@@ -5,9 +5,9 @@ import os
 from console_ui import ConsoleUI
 
 
-"""global"""
-main_acc = ["", "", int()]
-bot_accs = [["", ""], ["", ""], ["", ""], ["", ""], ["", ""]]
+def updating_libs():
+    os.system("cls")
+    os.system("pip install vk_api")
 
 
 def auth_handler():
@@ -21,6 +21,7 @@ def captcha_handler(captcha):
 
 
 def ui():
+    updating_libs()
     console_ui = ConsoleUI()
     default_msg = "Comment posted by AutolikeBot\n======CODED BY PFUB======="
     returned = console_ui.main_menu()
