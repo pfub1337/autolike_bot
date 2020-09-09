@@ -26,11 +26,15 @@ def ui():
     default_msg = "Comment posted by AutolikeBot\n======CODED BY PFUB======="
     returned = console_ui.main_menu()
     message = input("Input message (if not, bot will use default message): ")
+    group = int(input("Input group id: "))
+    if not group:
+        while not group:
+            group = int(input("Input group id: "))
     data = returned
     if message:
-        main(data, message)
+        main(data, message, group)
     else:
-        main(data, default_msg)
+        main(data, default_msg, group)
 
 
 def bots_likes(log_pass_bot, profile_id, new_post_id, group):
@@ -108,7 +112,7 @@ def main_account_send(login, password, group, new_post_id, message):
     return
 
 
-def main(data, msg):
+def main(data, msg, group):
     global vk, vk_bot, main_acc
 
     """
@@ -119,7 +123,7 @@ def main(data, msg):
     message = msg    # сюда вписать шаблонное сообщение
     login, password, profile_id = data[0][0], data[0][1], data[0][2]  # сюда вхуячиваешь логин (номер телефона)
     log_pass_bot = data[1:]
-    group = -170524888  # -181348137 - winstrike    id группы
+    group = group  # -181348137 - winstrike    id группы
 
     """
                                               ==============
