@@ -11,6 +11,9 @@ class ConsoleUI:
         self.main_menu()
 
     def accs_read(self):
+        if not os.path.exists("logpass.txt"):
+            my_file = open('logpass.txt', 'w')
+            my_file.close()
         with open("logpass.txt") as f:
             for line in f:
                 l = line
